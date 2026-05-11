@@ -5,18 +5,17 @@
 # Import Libraries
 import streamlit as st
 import pandas as pd
-
-
-
-# ==========================================
-# PAGE CONFIGURATION
-# ==========================================
+import plotly.express as px
 
 st.set_page_config(
     page_title="Smart Meter Analytics",
     page_icon="⚡",
     layout="wide"
 )
+
+@st.cache_data
+def load_data():
+    return pd.read_csv("smart_meter_data.csv")
 
 # ==========================================
 # TITLE
